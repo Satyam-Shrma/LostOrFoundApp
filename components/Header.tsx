@@ -1,6 +1,9 @@
 import Link from "next/link"
+import {Button} from "@/components/ui/button"
+import {FeedbackDialog} from "@/components/FeedbackDialog"
 
 export default function Header() {
+  const isLoggedIn = false;
   return (
     <div className="sticky top-0"><header className="top-0 text-gray-400 bg-gray-900 body-font">
   <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
@@ -17,11 +20,23 @@ export default function Header() {
       <Link className="mr-5 hover:text-white" href="/found_items">Found Items</Link>
       
     </nav>
-    <button className="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-700 rounded text-base mt-4 md:mt-0">Login/Register
+    <div className=" text-red-500 flex flex-1 items-center justify-end space-x-4">
+          <FeedbackDialog>
+            <Button variant="link">Feedback</Button>
+          </FeedbackDialog>
+          {isLoggedIn ? (
+            <p>User Menu</p> // Placeholder for user dropdown
+          ) : (
+            <Button asChild>
+              <Link href="/login">Login / Register</Link>
+            </Button>
+          )}
+        </div>
+    {/* <button className="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-700 rounded text-base mt-4 md:mt-0">Login/Register
       <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-1" viewBox="0 0 24 24">
         <path d="M5 12h14M12 5l7 7-7 7"></path>
       </svg>
-    </button>
+    </button> */}
   </div>
 </header></div>
   )
