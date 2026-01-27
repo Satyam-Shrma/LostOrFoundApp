@@ -43,10 +43,10 @@ const profileFormSchema = z.object({
 
 // Mock user data, in a real app this would come from an auth context/session
 const user = {
-  name: "Alex Doe",
-  email: "alex.doe@campus.edu",
-  collegeId: "AD12345",
-  avatarUrl: "https://picsum.photos/seed/alex/100/100",
+  name: "Kumar Satyam",
+  email: "satyam@gmail.com",
+  collegeId: "0103CA241133",
+  avatarUrl: "https://plus.unsplash.com/premium_vector-1682269287900-d96e9a6c188b?q=80&w=580&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 };
 
 export function ProfileForm() {

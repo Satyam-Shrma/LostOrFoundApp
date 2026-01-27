@@ -6,6 +6,7 @@ import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import type { Item } from '@/lib/definitions';
+import Image from "next/image";
 
 interface ItemCardProps {
   item: Item;
@@ -16,13 +17,15 @@ export function ItemCard({ item }: ItemCardProps) {
     <Card className="flex flex-col overflow-hidden h-full">
       <CardHeader className="p-0">
         <div className="relative aspect-4/3">
-          {/* <Image
+          <img
             src={item.imageUrl}
             alt={item.name}
             fill
             className="object-cover"
             data-ai-hint={item.imageHint}
-          /> */}
+            sizes="(max-width: 768px) 100vw, 400px"
+            priority
+          />
         </div>
       </CardHeader>
       <CardContent className="p-4 flexGrow">

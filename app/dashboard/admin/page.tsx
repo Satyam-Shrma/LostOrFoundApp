@@ -26,13 +26,13 @@ export default function AdminDashboardPage() {
   ];
 
   return (
-    <div className="space-y-8">
-       <div className="mb-8">
+    <div className="space-y-8 w-100% ">
+       <div className="mb-8 w-100%">
         <h1 className="text-3xl font-bold tracking-tight font-headline">Admin Overview</h1>
         <p className="text-muted-foreground">A summary of platform activity and management links.</p>
       </div>
 
-      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
         {stats.map((stat) => (
           <Card key={stat.title}>
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">

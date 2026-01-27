@@ -4,15 +4,16 @@ import { Button } from "@/components/ui/button"
 import Link from 'next/link';
 import { ItemCard } from '@/components/Item-card';
 import { getRecentItems } from '@/lib/placeholder-data';
+import Image from "next/image";
 
 
 export default function Home() {
   return (
     <div>
       <Header />
-        <div className="bg-blue-200 w-100%">
-          <section className="w-full py-20 md:py-32 lg:py-40 bg-card">
-        <div className="container px-4 md:px-6">
+        <div className="bg-green-200 w-100%">
+          <section className="w-full py-20 md:py-32 lg:py-40 bg-card  ">
+        <div className="container px-4 md:px-6">  
           <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
             <div className="flex flex-col justify-center space-y-4">
               <div className="space-y-2">
@@ -36,15 +37,19 @@ export default function Home() {
                 </Button>
               </div>
             </div>
-            {/* <Image
-              src="./public/MyPhoto.jpeg"
+          
+            <div className="w-100%"> 
+              <Image
+              src="/Images/lof4.png"
               width={600}
               height={400}
               alt="Hero"
               data-ai-hint="college campus"
               className="mx-auto aspect-video overflow-hidden rounded-xl object-cover sm:w-full"
-            /> */}
-          </div>
+              />
+            </div>
+          </div> 
+          
         </div>
       </section>
       
@@ -65,11 +70,11 @@ export default function Home() {
             ))}
           </div>
                <div className="flex justify-center">
-            <Button asChild>
+            <Button className="hover:text-w-2 hover:text-white"variant ="link"  asChild>
               <Link href="/dashboard/lost" className="text-primary underline">
                 View All Items 
                 {/* <ArrowRight className="ml-2 h-4 w-4" /> */}
-                <svg 
+                {/* <svg 
                 xmlns="http://www.w3.org/2000/svg" 
                 width="24" 
                 height="24"
@@ -79,7 +84,7 @@ export default function Home() {
                 strokeWidth="2" 
                 strokeLinecap="round" 
                 strokeLinejoin="round" 
-                className="lucide lucide-arrow-right-icon lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                className="lucide lucide-arrow-right-icon lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg> */}
               </Link>
             </Button>
           </div>

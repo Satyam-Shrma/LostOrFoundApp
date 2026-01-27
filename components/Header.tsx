@@ -1,35 +1,38 @@
 import Link from "next/link"
 import {Button} from "@/components/ui/button"
 import {FeedbackDialog} from "@/components/FeedbackDialog"
+import { AuthDialog } from "@/components/authDialog";
+
 
 export default function Header() {
   const isLoggedIn = false;
   return (
-    <div className="sticky top-0"><header className="top-0 text-gray-400 bg-gray-900 body-font">
+    <div className="sticky top-0"><header className="top-0 text-gray-400 bg-green-800 body-font">
   <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
     <Link className="flex title-font font-medium items-center text-white mb-4 md:mb-0" href={"/"}>
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
         <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
       </svg>
-      <span className="ml-3 text-xl">CampusFind
+      <span className="ml-3 text-2xl mr-3">CampusFind
 
       </span>
     </Link>
     <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-      <Link className="mr-5 hover:text-white" href="/lost_items">Lost Items</Link>
-      <Link className="mr-5 hover:text-white" href="/found_items">Found Items</Link>
+      <Button className="hover:text-blue-100" variant="link"asChild><Link className="mr-5 hover:text-white" href="/dashboard/lost">Lost Items</Link></Button>
+      <Button className="hover:text-blue-100" variant="link"asChild><Link className="mr-5 hover:text-white" href="/dashboard/found">Found Items</Link></Button>
       
     </nav>
-    <div className=" text-red-500 flex flex-1 items-center justify-end space-x-4">
+    <div className=" flex flex-1 items-center justify-end space-x-4">
           <FeedbackDialog>
-            <Button variant="link">Feedback</Button>
+            <Button className="hover:text-blue-100" variant="link">Feedback</Button>
           </FeedbackDialog>
           {isLoggedIn ? (
             <p>User Menu</p> // Placeholder for user dropdown
           ) : (
-            <Button asChild>
-              <Link href="/login">Login / Register</Link>
-            </Button>
+            // <Button className="hover:text-blue-100" variant="link" asChild>
+            //   <Link  href="/login">Login / Register</Link>
+            // </Button>
+            <AuthDialog />
           )}
         </div>
     {/* <button className="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-700 rounded text-base mt-4 md:mt-0">Login/Register

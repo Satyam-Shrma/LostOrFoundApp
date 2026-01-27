@@ -108,7 +108,7 @@ export function ItemForm({ type }: ItemFormProps) {
                         <FormControl>
                           <Textarea
                             placeholder="Include details like color, brand, and any identifying marks."
-                            className="min-h-[120px]"
+                            className="min-h-120px"
                             {...field}
                           />
                         </FormControl>
@@ -148,7 +148,7 @@ export function ItemForm({ type }: ItemFormProps) {
                               <Button
                                 variant={"outline"}
                                 className={cn(
-                                  "w-[240px] pl-3 text-left font-normal",
+                                  "w-60 pl-3 text-left font-normal",
                                   !field.value && "text-muted-foreground"
                                 )}
                               >
